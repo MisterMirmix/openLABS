@@ -1,21 +1,21 @@
 #include "Matrix.h"
 
 
-void fillMatrix(int** matrix, int n, int m)  //заполнение матрицы 
+void fillMatrix(int** matrix, int n, int m)  //Р·Р°РїРѕР»РЅРµРЅРёРµ РјР°С‚СЂРёС†С‹ 
 {
-	std::cout << "1)Заполнить вручную\n";
-	std::cout << "2)Заполнить случайными числами\n";
+	std::cout << "1)Р—Р°РїРѕР»РЅРёС‚СЊ РІСЂСѓС‡РЅСѓСЋ\n";
+	std::cout << "2)Р—Р°РїРѕР»РЅРёС‚СЊ СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё\n";
 	
 	int choosedOption;
 	bool isError = false;
 	do
 	{
-		std::cout << "Введите номер:\n";
+		std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ:\n";
 		std::cin >> choosedOption;
 		if (std::cin.fail() || choosedOption > 2 || choosedOption < 1)
 		{
 			isError = true;
-			std::cout << "Ошибка введите число от 1 до 2\n";
+			std::cout << "РћС€РёР±РєР° РІРІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РѕС‚ 1 РґРѕ 2\n";
 			std::cin.clear();
 			std::cin.ignore(std::cin.rdbuf()->in_avail());
 			continue;
@@ -42,13 +42,13 @@ void fillMatrix(int** matrix, int n, int m)  //заполнение матрицы
 			{
 				do
 				{
-					std::cout << "Элемент (" << (i+1) << "," << (j+1) << ") -> ";
+					std::cout << "Р­Р»РµРјРµРЅС‚ (" << (i+1) << "," << (j+1) << ") -> ";
 					std::cin >> choosedOption;
 					
 					if (std::cin.fail())
 					{
 						isError = true;
-						std::cout << "Ошибка введите целое число\n";
+						std::cout << "РћС€РёР±РєР° РІРІРµРґРёС‚Рµ С†РµР»РѕРµ С‡РёСЃР»Рѕ\n";
 						std::cin.clear();
 						std::cin.ignore(std::cin.rdbuf()->in_avail());
 						continue;
@@ -62,7 +62,7 @@ void fillMatrix(int** matrix, int n, int m)  //заполнение матрицы
 	}
 }
 
-void destructMatrix(int **matrix, int n, int m)  //удаление выделенной памяти под матрицу n*m
+void destructMatrix(int **matrix, int n, int m)  //СѓРґР°Р»РµРЅРёРµ РІС‹РґРµР»РµРЅРЅРѕР№ РїР°РјСЏС‚Рё РїРѕРґ РјР°С‚СЂРёС†Сѓ n*m
 {
 	for (int i = 0; i < n; ++i)
 	{
@@ -71,7 +71,7 @@ void destructMatrix(int **matrix, int n, int m)  //удаление выделенной памяти по
 	delete[]matrix;
 }
 
-int** constructMatrix(int n, int m)  //выделение памяти под матрицу n*m
+int** constructMatrix(int n, int m)  //РІС‹РґРµР»РµРЅРёРµ РїР°РјСЏС‚Рё РїРѕРґ РјР°С‚СЂРёС†Сѓ n*m
 {
 	int** matrix = new int* [n];
 	for (int i = 0; i < n; ++i)
@@ -81,7 +81,7 @@ int** constructMatrix(int n, int m)  //выделение памяти под матрицу n*m
 	return matrix;
 }
 
-void printMatrix(int** matrix, int n, int m)  //вывод матрицы на экран
+void printMatrix(int** matrix, int n, int m)  //РІС‹РІРѕРґ РјР°С‚СЂРёС†С‹ РЅР° СЌРєСЂР°РЅ
 {
 	for (int i = 0; i < n; ++i)
 	{
@@ -149,12 +149,12 @@ int** multiplicationMatrix(int** matrix, int &n, int &m)
 	bool isError = false;
 	do
 	{
-		std::cout << "Введите размер матрицы на которую хотите умножить:\n";
+		std::cout << "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РјР°С‚СЂРёС†С‹ РЅР° РєРѕС‚РѕСЂСѓСЋ С…РѕС‚РёС‚Рµ СѓРјРЅРѕР¶РёС‚СЊ:\n";
 		std::cin >> n2 >> m2;
 		if (std::cin.fail() || (m != n2))
 		{
 			isError = true;
-			std::cout << "Ошибка введите размеры возможные для умножения на исходную матрицу\n";
+			std::cout << "РћС€РёР±РєР° РІРІРµРґРёС‚Рµ СЂР°Р·РјРµСЂС‹ РІРѕР·РјРѕР¶РЅС‹Рµ РґР»СЏ СѓРјРЅРѕР¶РµРЅРёСЏ РЅР° РёСЃС…РѕРґРЅСѓСЋ РјР°С‚СЂРёС†Сѓ\n";
 			std::cin.clear();
 			std::cin.ignore(std::cin.rdbuf()->in_avail());
 			continue;
@@ -209,13 +209,13 @@ void initMatrix()
 	bool isError = false;
 	do
 	{
-		std::cout << "Введите размеры матрицы n, m: \n";
+		std::cout << "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂС‹ РјР°С‚СЂРёС†С‹ n, m: \n";
 		std::cin >> n >> m;
 		
 		if (std::cin.fail())
 		{
 			isError = true;
-			std::cout << "Ошибка введите целое число\n";
+			std::cout << "РћС€РёР±РєР° РІРІРµРґРёС‚Рµ С†РµР»РѕРµ С‡РёСЃР»Рѕ\n";
 			std::cin.clear();
 			std::cin.ignore(std::cin.rdbuf()->in_avail());
 			continue;
@@ -229,22 +229,22 @@ void initMatrix()
 	fillMatrix(matrix1, n, m);
 	printMatrix(matrix1, n, m);
 
-	std::cout << "1)Транспонировать матрицу\n";
-	std::cout << "2)Сложить с матрицей\n";
-	std::cout << "3)Умножить на матрицу\n";
-	std::cout << "0)Завершить программу\n";
+	std::cout << "1)РўСЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°С‚СЊ РјР°С‚СЂРёС†Сѓ\n";
+	std::cout << "2)РЎР»РѕР¶РёС‚СЊ СЃ РјР°С‚СЂРёС†РµР№\n";
+	std::cout << "3)РЈРјРЅРѕР¶РёС‚СЊ РЅР° РјР°С‚СЂРёС†Сѓ\n";
+	std::cout << "0)Р—Р°РІРµСЂС€РёС‚СЊ РїСЂРѕРіСЂР°РјРјСѓ\n";
 
 	int choosedOption;
 	do
 	{
-		std::cout << "Введите номер :\n";
+		std::cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ :\n";
 		std::cin >> choosedOption;
 
 		
 		if (std::cin.fail())
 		{
 			isError = true;
-			std::cout << "Ошибка введите целое число от 0 до 3\n";
+			std::cout << "РћС€РёР±РєР° РІРІРµРґРёС‚Рµ С†РµР»РѕРµ С‡РёСЃР»Рѕ РѕС‚ 0 РґРѕ 3\n";
 			std::cin.clear();
 			std::cin.ignore(std::cin.rdbuf()->in_avail());
 			continue;
@@ -258,17 +258,17 @@ void initMatrix()
 	case 0:
 		break;
 	case 1:
-		std::cout << "Транспонированная матрица:\n";
+		std::cout << "РўСЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРЅР°СЏ РјР°С‚СЂРёС†Р°:\n";
 		matrix1 = transpMatrix(matrix1, n, m);
 		printMatrix(matrix1, n, m);
 		break;
 	case 2:
-		std::cout << "Сумма матриц\n";
+		std::cout << "РЎСѓРјРјР° РјР°С‚СЂРёС†\n";
 		matrix1 = sumMatrix(matrix1, n, m);
 		printMatrix(matrix1, n, m);
 		break;
 	case 3:
-		std::cout << "Произведение матриц\n";
+		std::cout << "РџСЂРѕРёР·РІРµРґРµРЅРёРµ РјР°С‚СЂРёС†\n";
 		matrix1 = multiplicationMatrix(matrix1, n, m);
 		printMatrix(matrix1, n, m);
 		break;
